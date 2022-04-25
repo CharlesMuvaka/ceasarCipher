@@ -12,5 +12,9 @@ class DecryptTest {
     public void getUserInput_checksIfThereIsUserInput() {
         assertEquals("Charles Muvaka", decryption.getmUserMessage());
     }
+    @Test
+    public void getUserKey_checksIfThereIsUserKey() {
+        assertEquals(3, decryption.getmUserKey());
+    }
 
 }

@@ -5,11 +5,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EncryptTest {
-    Encrypt encryption = new Encrypt("Charles Muvaka", 3);
+    Encrypt encryption = new Encrypt("Hi", 2);
 
     @Test
     public void getUserInput_checksIfThereIsUserInput() {
-        assertEquals("Charles Muvaka", encryption.getmUserMessage());
+        assertEquals("Hi", encryption.getmUserMessage());
     }
 
+    @Test
+    public void encryptMessage_encryptsUserMessage_returnJK() {
+
+        assertEquals("JK", encryption.encryptUserMessage());
+    }
 }
+

@@ -6,15 +6,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DecryptTest {
 
-    Decrypt decryption = new Decrypt("Charles Muvaka", 3);
+    Decrypt decryption = new Decrypt("JK", 2);
 
     @Test
     public void getUserInput_checksIfThereIsUserInput() {
-        assertEquals("Charles Muvaka", decryption.getmUserMessage());
+        assertEquals("JK", decryption.getmUserMessage());
     }
     @Test
     public void getUserKey_checksIfThereIsUserKey() {
-        assertEquals(3, decryption.getmUserKey());
+        assertEquals(2, decryption.getmUserKey());
+    }
+
+    @Test
+    public void encryptMessage_encryptsUserMessage_return_hi() {
+
+        assertEquals("HI", decryption.decryptMessage());
     }
 
 }

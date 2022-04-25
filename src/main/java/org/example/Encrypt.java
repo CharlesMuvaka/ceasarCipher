@@ -1,2 +1,4 @@
-package org.example;public class Encrypt {
+package org.example;
+
+public class Encrypt {
 }

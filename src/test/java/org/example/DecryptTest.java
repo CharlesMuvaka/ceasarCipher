@@ -18,7 +18,7 @@ class DecryptTest {
     }
 
     @Test
-    public void encryptMessage_encryptsUserMessage_return_hi() {
+    public void encryptMessage_encryptsUserMessage_return_HI() {
 
         assertEquals("HI", decryption.decryptMessage());
     }

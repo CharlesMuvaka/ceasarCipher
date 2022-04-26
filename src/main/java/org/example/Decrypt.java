@@ -1,14 +1,16 @@
 package org.example;
 
-import java.util.Locale;
+
+import java.util.concurrent.SynchronousQueue;
 
 public class Decrypt {
 
     private String mUserMessage;
     private int mUserKey;
+
     public Decrypt(String userMessage, int key) {
         this.mUserMessage = userMessage;
-        this.mUserKey  = key;
+        this.mUserKey = key;
 
     }
 
@@ -28,33 +30,35 @@ public class Decrypt {
         this.mUserKey = mUserKey;
     }
 
-    public String encryptUserMessage(){
+
+    public String decryptMessage() {
 
         String myAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        StringBuilder userDecryptedMessage = new StringBuilder();
+        StringBuilder decryptedUserMessage = new StringBuilder();
 
+        char[] userEncryptedMessage = getmUserMessage().toCharArray();
 
-        String userMessageToBeDecrypted = getmUserMessage().toLowerCase();
-        char[] userMessageArray = userMessageToBeDecrypted.toCharArray();
-        int userEncryptionKey = getmUserKey();
+        for (char d : userEncryptedMessage
+        ) {
+            int currentPosition = myAlphabet.indexOf(d);
+            int key = getmUserKey();
 
-        if (userEncryptionKey>0 && userEncryptionKey<26){
-            for (char c:userMessageArray
-            ) {
-                if (Character.isLetter(c)){
-                    int currentPosition = myAlphabet.indexOf(c);
-                    int newIndex = (currentPosition + userEncryptionKey) % 26;
-                    char encryptedLetter = myAlphabet.charAt(newIndex);
-                    userDecryptedMessage.append(encryptedLetter);
+            if (Character.isAlphabetic(d)) {
+                if (currentPosition != -1) {
+                    int newIndex = (currentPosition - key) % 26;
+                    char decryptedCharacter = myAlphabet.charAt(newIndex);
+                    decryptedUserMessage.append(decryptedCharacter);
                 }else{
-                    userDecryptedMessage.append(c);
+                    int newIndex = (currentPosition - key) + 26;
+                    char decryptedCharacter = myAlphabet.charAt(newIndex);
+                    decryptedUserMessage.append(decryptedCharacter);
+
                 }
-
+            }else{
+                decryptedUserMessage.append(d);
             }
-
         }
 
-        return userDecryptedMessage.toString();
+        return decryptedUserMessage.toString();
     }
-
 }

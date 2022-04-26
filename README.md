@@ -1,5 +1,5 @@
 # CaesarCipher
-##### By Charles Muvaka
+##### By Charles -  Muvaka
 ### It is an encoding and decoding application - CaesarCipher.
 ## Table of Content
 + [Description](#description)

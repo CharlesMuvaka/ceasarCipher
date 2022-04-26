@@ -34,7 +34,7 @@ public class Main {
             }
 
             else if (userMessage.equals("Decrypt")) {
-                System.out.println("---------------------------------------------------");
+                System.out.println("--------------------------------------------------------");
                 System.out.println("Enter Message to be Decrypted");
                 String userText = myTerminal.nextLine();
 

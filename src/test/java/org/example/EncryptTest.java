@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class EncryptTest {
     Encrypt encryption = new Encrypt("Hi", 2);
 
+
     @Test
     public void getUserInput_checksIfThereIsUserInput() {
         assertEquals("Hi", encryption.getmUserMessage());

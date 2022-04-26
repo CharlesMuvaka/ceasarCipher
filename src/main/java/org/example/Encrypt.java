@@ -9,6 +9,7 @@ public class Encrypt {
 
     }
 
+
     public int getmKey() {
         return mKey;
     }
@@ -39,8 +40,8 @@ public class Encrypt {
             for (char c:userMessageArray
             ) {
                 if (Character.isLetter(c)){
-                    int currentPosition = myAlphabet.indexOf(c);
-                    int newIndex = (currentPosition + userEncryptionKey) % 26;
+                    int currentIndex = myAlphabet.indexOf(c);
+                    int newIndex = (currentIndex + userEncryptionKey) % 26;
                     char encryptedLetter = myAlphabet.charAt(newIndex);
                     userEncryptedMessage.append(encryptedLetter);
                 }else{
@@ -49,6 +50,8 @@ public class Encrypt {
 
             }
 
+        }else{
+            System.out.println("Enter a number between 1 and 25");
         }
 
         return userEncryptedMessage.toString();

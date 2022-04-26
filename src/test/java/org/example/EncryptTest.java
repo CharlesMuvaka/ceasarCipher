@@ -14,7 +14,7 @@ class EncryptTest {
     }
 
     @Test
-    public void encryptMessage_encryptsUserMessage_returnJK() {
+    public void encryptMessage_encryptsUserMessage_return_JK() {
 
         assertEquals("JK", encryption.encryptUserMessage());
     }
